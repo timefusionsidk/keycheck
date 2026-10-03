@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root { --bg:#faf7f2; --fg:#1f2125; --card:#fffdf9; --line:#ddd6c8; --muted:#5b5f66; --accent:#3b4cca; --onaccent:#ffffff; --warn:#a16207; }
+.dark { --bg:#15161a; --fg:#ece9e2; --card:#1f2125; --line:#383a41; --muted:#a4a8b0; --accent:#8c9bff; --onaccent:#10121f; --warn:#fbbf24; }
+
+@theme inline {
+  --color-bg: var(--bg); --color-fg: var(--fg); --color-card: var(--card); --color-line: var(--line);
+  --color-muted: var(--muted); --color-accent: var(--accent); --color-onaccent: var(--onaccent); --color-warn: var(--warn);
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+body { background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overflow-x: hidden; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.print-only { display: none; }
+@media print { .no-print { display: none !important; } .print-only { display: block; } body { background: #fff; color: #000; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
